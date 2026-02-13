@@ -1,0 +1,47 @@
+.form{
+    max-width: 400px;
+    margin:2px 5px;
+    border: 1px solid ;
+    border-radius: 8px;
+    padding: 2rem;
+}
+.title{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color:#222;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.field label{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.field input
+{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.button
+{
+   cursor: pointer;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   display: block;
+   margin: 2px auto;
+  font-size: 1rem;
+}
+.button:hover{
+    background:#1a7fe358;
+}
+span{
+    margin-top: 0.3rem;
+    font-size: small;
+    font-weight: 100;
+    cursor: pointer;
+    color: blue;
+}
