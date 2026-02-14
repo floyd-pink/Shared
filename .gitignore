@@ -32,5 +32,12 @@ build/
 .vscode/
 .idea/
 .DS_Store
+# Backend ignores
+Backend/node_modules/
+Backend/.env
 
-# Environment files are intentionally tracked
+# Frontend ignores
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
