@@ -19,6 +19,18 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+      address: [
+    {
+      fullName: String,
+      phone: String,
+      city: String,
+      district: String,
+      province: String,
+      postalCode: String,
+      street: String
+    }
+  ]
+
     
 },{timestamps:true});
 export const user=mongoose.model("user",userSchema);
