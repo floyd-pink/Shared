@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import user from "../model/user.model.js";
 
 export const register =async(req,res)=>{
    try {
