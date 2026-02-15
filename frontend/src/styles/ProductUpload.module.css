@@ -31,7 +31,7 @@ textarea {
 }
 
 /* Button styling */
-button {
+.button {
   background: #007bff;
   color: white;
   padding: 0.8rem;
@@ -42,7 +42,7 @@ button {
   transition: background 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   background: #0056b3;
 }
 

@@ -68,7 +68,7 @@ const ProductUpload = () => {
 
     <input type="file" accept="image/*" onChange={handelImageChange}/>
     {preview && <img src={preview} alt="Preview" className={styles.preview}/>}
-    <button type='submit'> Upload Product</button>
+    <button type='submit' className={styles.button}> Upload Product</button>
    </form>
    </>
   )
