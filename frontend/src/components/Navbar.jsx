@@ -31,6 +31,14 @@ const Navbar = () => {
             Login
           </NavLink>
         </li>
+        <li>
+          <NavLink 
+            to="/upload" 
+            className={({ isActive }) => isActive ? styles.active : styles.link}
+          >
+            Upload Image
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
