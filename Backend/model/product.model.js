@@ -1,54 +1,59 @@
-import mongoose  from "mongoose";
+import mongoose from "mongoose";
 
-const productschema =new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-
+const productSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+      type: String,
+      required: true,
     },
-    brand:{
-        type:String,
-        required:true
+    brand: {
+      type: String,
+      required: true,
     },
-    price:{
-        type:Number,
-        required:true
+    price: {
+      type: Number,
+      required: true,
     },
-    discount:{
-        type:Number,
+    discount: {
+      type: Number,
     },
-    instock:{
-        type:Number,
-        required:true
+    instock: {
+      type: Number,
+      required: true,
     },
-    sold:{
-        type:Number,
+    sold: {
+      type: Number,
+      default: 0,
     },
-    images:[{
-        url:String,
-        public_id:String
-    }],
+    images: [
+      {
+        url: String,
+        public_id: String,
+      },
+    ],
     category: {
-    type: ObjectId,
-    ref: "Category"
-   },
-     ratings:{
-        type:Number,
-     },
-  reviews: [
-    {
-      user: { type: ObjectId, ref: "User" },
-      name: String,
-      rating: Number,
-      comment: String
-    }
-  ]
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
+    ratings: {
+      type: Number,
+      default: 0,
+    },
+    reviews: [
+      {
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+        name: String,
+        rating: Number,
+        comment: String,
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-
-
-},{timestamps:true})
-export const product=mongoose.model("product",productschema);
+export const product = mongoose.model("product", productSchema);

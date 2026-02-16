@@ -1,85 +1,111 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import user from "../model/user.model.js";
+import { user as User } from "../model/user.model.js";
 
-export const register =async(req,res)=>{
-   try {
-    const {username,email,password,phonenumber}=req.body;
-    if(!username || !email || !password || !phonenumber){
-        res.status(400).json({
-            message:"All fields are required",
-            success:false
-        });
-    }
-    const user = await user.findone({email});
-    if(user){
-        res.status(400).json({
-            message:"User already exists",
-            success:false
-        })
-    }
-    const hashedpassword =await bcrypt.hash(password,10);
-    const usercreate= await user.create({
-        username,
-        email,
-        password:hashedpassword,
-        phonenumber:phonenumber
-    })
-    res.status(201).json({
-        message:"User created successfully",
-        success:true,
-        user:usercreate
-    })
+export const register = async (req, res) => {
+  try {
+    const { fullname, email, password, phoneno } = req.body;
 
-   } catch (error) {
-    console.log(error);
-   }
+    if (!fullname || !email || !password || !phoneno) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: "User already exists",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const createdUser = await User.create({
+      fullname,
+      email,
+      phoneno,
+      password: hashedPassword,
+    });
+
+    return res.status(201).json({
+      success: true,
+      message: "User created successfully",
+      user: createdUser,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      error: error.message,
+    });
+  }
 };
 
-export const login =async(req,res)=>{
-    const {email,password}=req.body;
-    if(!email || !password){
-        res.status(400).json({
-            message:"All fields are required",
-            success:false
-        })
-    }
-    let user = await user.findone({email});
-    if(!user){
-        res.status(400).json({
-            message:"User not found",
-            success:false
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-    });
-   }
-    const ismatch = await bcrypt.compare(password,user.password);
-    if(!ismatch){
-        res.status(400).json({
-            message:"Invalid credentials",
-            success:false
-        });
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
     }
-    const tokendata={
-        userid:user._id
-    }
-    user={
-        id:user._id,
-        username:user.username,
-        email:user.email,
-        phonenumber:user.phonenumber
-    }
-    const token = await jwt.sign(tokendata,process.env.JWT,{expiresIn:"1d"});
-    return res.status(200).cookie('token',token,{maxAge:7*24*60*60*1000,httpsonly:true,samesite:'strict'}).json({
-         message:"Login successful",
-         success:true,
-         token:token,
-         user:user
-    })
 
-}
-export const logout =async(req,res)=>{
-    res.status(200).cookie('token','',{maxAge:0}).json({
-        message:"Logout successful",
-        success:true
+    const existingUser = await User.findOne({ email });
+    if (!existingUser) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    const isMatch = await bcrypt.compare(password, existingUser.password);
+    if (!isMatch) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid credentials",
+      });
+    }
+
+    const token = jwt.sign(
+      { userid: existingUser._id },
+      process.env.JWT,
+      { expiresIn: "1d" }
+    );
+
+    return res
+      .status(200)
+      .cookie("token", token, {
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: "strict",
+      })
+      .json({
+        success: true,
+        message: "Login successful",
+        token,
+        user: {
+          id: existingUser._id,
+          fullname: existingUser.fullname,
+          email: existingUser.email,
+          phoneno: existingUser.phoneno,
+        },
+      });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      error: error.message,
     });
-}
+  }
+};
+
+export const logout = async (req, res) => {
+  return res.status(200).cookie("token", "", { maxAge: 0 }).json({
+    success: true,
+    message: "Logout successful",
+  });
+};
