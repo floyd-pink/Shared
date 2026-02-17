@@ -24,6 +24,12 @@
   flex-direction: column;
   margin-bottom: 1.25rem;
 }
+.field span{
+  cursor: pointer;
+  margin: 0.5rem;
+  text-align: center;
+  color: blue;
+}
 
 .field label {
   margin-bottom: 0.6rem;

@@ -1,13 +1,22 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
+  const navigate=useNavigate();
   return (
     <nav className={styles.navbar}>
-      {/* Brand Logo  */}
-      <div className={styles.logo}>SHARE</div>
-      
+   <div 
+  className={styles.logo} 
+  onClick={() => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+>
+  SHARE
+</div>
+
+
       {/* Navigations*/}
       <ul className={styles.navList}>
         <li>
