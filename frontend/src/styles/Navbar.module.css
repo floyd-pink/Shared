@@ -1,14 +1,12 @@
 .navbar {
   display: flex;
-  justify-content: space-between; /* This pushes the logo left and nav right */
+  justify-content: space-between; 
   align-items: center;
   height: 80px;
   padding: 0 6%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  
-  /* Glassmorphism: Blends with the background instead of blocking it */
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -26,7 +24,7 @@
 .navList {
   list-style: none;
   display: flex;
-  gap: 3rem; /* Spacious professional gap */
+  gap: 3rem; 
   margin: 0;
   padding: 0;
 }
@@ -47,7 +45,7 @@
   color: #000;
 }
 
-/* Minimalist Underline for Active Link */
+
 .active {
   color: #000;
 }
@@ -62,7 +60,6 @@
   background-color: #1a1a1a;
 }
 
-/* Hover underline animation */
 .link::after {
   content: '';
   position: absolute;

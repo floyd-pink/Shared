@@ -1,10 +1,10 @@
-/* Container: High-end paper feel */
+
 .form {
   max-width: 400px;
   margin: 60px auto;
   background: #ffffff;
   border: 1px solid #f0f0f0; 
-  border-radius: 16px; /* Matching the 16px radius from your other form */
+  border-radius: 16px; 
   padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   font-family: 'Inter', -apple-system, sans-serif;
@@ -13,13 +13,12 @@
 .title {
   text-align: center;
   margin-bottom: 2rem;
-  color: #2d3436; /* Deep Slate */
+  color: #2d3436; 
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
-/* Field grouping */
 .field {
   display: flex;
   flex-direction: column;
@@ -58,7 +57,7 @@
   color: #cbd5e0;
 }
 
-/* BUTTON: Replaced Blue with Deep Slate */
+
 .button {
   cursor: pointer;
   border: none;
@@ -68,7 +67,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: #2d3436; /* Deep Slate */
+  background: #2d3436; 
   border-radius: 10px;
   width: 100%;
   transition: all 0.3s ease;
@@ -76,7 +75,7 @@
 }
 
 .button:hover {
-  background: #000000; /* Pure black on hover */
+  background: #000000; 
   transform: translateY(-1.5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
@@ -85,19 +84,3 @@
   transform: translateY(0);
 }
 
-/* If you have a span/link below the button */
-span {
-  display: block;
-  text-align: center;
-  margin-top: 1.2rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #636e72;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-span:hover {
-  color: #2d3436;
-  text-decoration: underline;
-}

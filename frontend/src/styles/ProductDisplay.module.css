@@ -3,7 +3,7 @@
   border: 1px solid #f2f2f2;
   border-radius: 12px;
   padding: 1rem;
-  width: 240px; /* Standard card width */
+  width: 240px; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -17,10 +17,10 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* 1. Improved Image Presentation */
+
 .image, .imagePlaceholder {
   width: 100%;
-  aspect-ratio: 3 / 4; /* More professional for clothing */
+  aspect-ratio: 3 / 4; 
   object-fit: cover;
   border-radius: 8px;
   background-color: #f9f9f9;
@@ -34,13 +34,13 @@
   text-transform: uppercase;
 }
 
-/* 2. Text Layout (Professional Hierarchy) */
+
 .productCard h3 {
   margin: 0;
   font-size: 1.1rem;
   color: #2d3436;
   font-weight: 600;
-  height: 2.4rem; /* Keeps cards uniform if titles are long */
+  height: 2.4rem; 
   overflow: hidden;
 }
 
@@ -50,7 +50,7 @@
   color: #636e72;
 }
 
-/* Price styling */
+
 .productCard p:nth-of-type(1) {
   font-size: 1.2rem;
   font-weight: 700;
@@ -58,7 +58,7 @@
   margin: 0.5rem 0;
 }
 
-/* 3. Stock Labels as Badges */
+
 .outStock, .inStock, .lowStock {
   font-size: 0.7rem !important;
   font-weight: 700;
@@ -70,7 +70,7 @@
 .outStock { color: #d63031 !important; }
 .inStock { color: #00b894 !important; }
 
-/* 4. The "Real" Add to Cart Button */
+
 .addtoCart {
   width: 100%;
   background: #2d3436;
@@ -81,7 +81,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  margin-top: auto; /* Pushes button to the bottom */
+  margin-top: auto; 
   transition: background 0.2s;
 }
 

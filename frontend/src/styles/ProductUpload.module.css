@@ -1,4 +1,4 @@
-/* Container styling */
+
 .form {
   display: flex;
   flex-direction: column;
@@ -17,13 +17,13 @@
   text-align: left;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #2d3436; /* Deep Slate */
+  color: #2d3436;
   margin-bottom: 0.5rem;
   border-bottom: 2px solid #f8f9fa;
   padding-bottom: 1rem;
 }
 
-/* Inputs and textarea styling */
+
 .form input, 
 .form textarea {
   padding: 0.8rem 1rem;
@@ -38,7 +38,7 @@
 .form input:focus, 
 .form textarea:focus {
   outline: none;
-  border-color: #b2bec3; /* Slate grey border */
+  border-color: #b2bec3;
   background-color: #fff;
   box-shadow: 0 0 0 4px rgba(178, 190, 195, 0.15);
 }
@@ -48,7 +48,7 @@
   min-height: 100px;
 }
 
-/* Custom File Upload Label - Updated to match Slate */
+
 .filelabel {
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@
   display: none;
 }
 
-/* Image Preview Grid */
+
 .previewWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -95,7 +95,7 @@
   object-fit: cover;
 }
 
-/* Remove Button - Keeping it clean */
+
 .removeBtn {
   position: absolute;
   top: 6px;
@@ -120,10 +120,10 @@
   color: #fff;
 }
 
-/* Submit Button - Updated from Blue to Deep Slate */
+
 .button {
   margin-top: 1rem;
-  background: #2d3436; /* Matching your login/signup theme */
+  background: #2d3436; 
   color: white;
   padding: 1rem;
   border: none;

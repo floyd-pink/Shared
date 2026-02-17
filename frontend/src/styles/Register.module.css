@@ -1,12 +1,12 @@
-/* Container: Clean and Airy */
+
 .form {
   max-width: 400px;
   margin: 60px auto;
   background: #ffffff;
   border: 1px solid #f0f0f0; 
-  border-radius: 16px; /* Slightly rounder for a friendlier feel */
+  border-radius: 16px; 
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Very soft shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
   font-family: 'Inter', -apple-system, sans-serif;
 }
 
@@ -45,7 +45,6 @@
   transition: all 0.2s ease;
 }
 
-/* Focus state matches the new neutral theme */
 .field input:focus {
   outline: none;
   border-color: #b2bec3; 
@@ -53,7 +52,6 @@
   box-shadow: 0 0 0 4px rgba(178, 190, 195, 0.15);
 }
 
-/* BUTTON: Replaced Blue with a Pleasant Deep Slate */
 .button {
   width: 100%;
   cursor: pointer;
@@ -63,14 +61,14 @@
   margin: 1.5rem auto 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #2d3436; /* Deep charcoal/slate - looks amazing with white */
+  background-color: #2d3436; 
   color: #ffffff;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #000000; /* Subtle shift to pure black */
+  background: #000000; 
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
