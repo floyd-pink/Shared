@@ -1,30 +1,79 @@
 .navbar {
-  padding: 0.5rem 1rem;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: space-between; /* This pushes the logo left and nav right */
+  align-items: center;
+  height: 80px;
+  padding: 0 6%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Glassmorphism: Blends with the background instead of blocking it */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
 }
 
 .navList {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 3rem; /* Spacious professional gap */
   margin: 0;
   padding: 0;
 }
 
-.link {
-  color: black;
-  text-decoration: none; 
-  font-weight: 500;
+.link, .active {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #444;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 8px 0;
 }
 
+.link:hover {
+  color: #000;
+}
+
+/* Minimalist Underline for Active Link */
 .active {
-  border-bottom: 2px solid blue; 
-  color: rgb(12, 12, 12);
-  text-decoration: none; 
+  color: #000;
 }
 
-.navList li {
-  display: flex;
-  align-items: center;
+.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1a1a1a;
+}
+
+/* Hover underline animation */
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
 }

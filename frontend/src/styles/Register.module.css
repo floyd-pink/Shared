@@ -1,47 +1,81 @@
-.form{
-    max-width: 400px;
-    margin: 50px auto;
-    border: 1px solid ;
-    border-radius: 8px;
-    padding: 2rem;
+/* Container: Clean and Airy */
+.form {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #ffffff;
+  border: 1px solid #f0f0f0; 
+  border-radius: 16px; /* Slightly rounder for a friendlier feel */
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Very soft shadow */
+  font-family: 'Inter', -apple-system, sans-serif;
 }
-.title{
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color:#222;
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d3436;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
-.field{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  
 }
-.field label{
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    border-radius: 4px;
+
+.field label {
+  margin: 0.6rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #636e72;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+ text-align: left;
 }
-.field input
-{
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.button
-{
-   cursor: pointer;
-   border: none;
-   padding: 0.75rem 1.5rem;
-   display: block;
-   margin: 2px auto;
+
+.field input {
+  padding: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
   font-size: 1rem;
+  background-color: #fbfbfb;
+  transition: all 0.2s ease;
 }
-.button:hover{
-    background:#1a7fe358;
+
+/* Focus state matches the new neutral theme */
+.field input:focus {
+  outline: none;
+  border-color: #b2bec3; 
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(178, 190, 195, 0.15);
 }
-span{
-    margin-top: 0.3rem;
-    font-size: small;
-    font-weight: 100;
-    cursor: pointer;
-    color: blue;
+
+/* BUTTON: Replaced Blue with a Pleasant Deep Slate */
+.button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem;
+  display: block;
+  margin: 1.5rem auto 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #2d3436; /* Deep charcoal/slate - looks amazing with white */
+  color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
+
+.button:hover {
+  background: #000000; /* Subtle shift to pure black */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+

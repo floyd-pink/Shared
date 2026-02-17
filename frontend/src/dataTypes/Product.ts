@@ -20,7 +20,7 @@ export interface Product {
   discount?: number;
   instock: number;
   sold?: number;
-  images: ProductImage[];
+  images: ProductImage[]; // Images array 
   category: string; // Category._id
   ratings?: number;
   reviews?: Review[];

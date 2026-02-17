@@ -5,7 +5,7 @@ import styles from '../styles/ProductList.module.css'
 
 const ProductList = () => {
   return (
-    <div className={styles.productList}>
+    <div className={styles.productGrid}>
       {dummyProducts.map((p) => (
         <ProductDisplay key={p.id} product={p} />
       ))}
