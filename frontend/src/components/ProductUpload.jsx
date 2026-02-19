@@ -48,11 +48,10 @@ const ProductUpload = () => {
 
       images.forEach(file => data.append("images", file));
 
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch("http://localhost:5173/api/products", {
         method: "POST",
         body: data,
       });
-
       if (res.ok) {
         alert("Product uploaded successfully!");
         setFormData({

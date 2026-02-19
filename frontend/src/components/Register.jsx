@@ -1,14 +1,22 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from "../styles/Register.module.css";
+
+
+type User = {
+  name: string,
+  email:string,
+  phone:number
+}
 const Register = () => {
     const [user,setUser]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const handelRegister=()=>
-    {
-     
-    }
+const handelRegister = () => {
+
+};
+
+
   return (
     <form onSubmit={handelRegister} className={styles.form}>
      <h2 className={styles.title}>Register</h2>

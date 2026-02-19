@@ -14,7 +14,7 @@ export interface User {
   fullname: string;
   email: string;
   phoneno: number;
-  password?: string; // usually not sent back to frontend
+  password?: string; 
   address?: Address[];
   createdAt?: string;
   updatedAt?: string;
